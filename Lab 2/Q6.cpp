@@ -35,11 +35,17 @@ int main() {
             cout << "Result:" << num1 << "*" << num2 << "=" << num1 * num2 << endl;
             break;
         case 4:
-            result = num1 + num2;
-            cout << "Result:" << num1 << "/" << num2 << "=" << num1 / num2 << endl;
+            if (num2 != 0) {
+                result = num1 + num2;
+                cout << "Result:" << num1 << "/" << num2 << "=" << num1 / num2 << endl;
+            }
+            else {
+                cout << "Division by zero is not allowed." << endl;
+            }
+        default:
+            cout << "Invalid choice!" << endl; 
             break;
     }
         
-
     return 0;
 }
