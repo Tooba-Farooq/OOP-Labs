@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    int terms, first_term = 0, second_term = 1, next_term;
+    long long int terms, first_term = 0, second_term = 1, next_term;
 
     cout << "Tooba Farooq SE-009" << endl;
     cout << "Enter the number of terms for Fibonacci series: ";
