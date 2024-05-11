@@ -16,15 +16,7 @@ int main() {
         sum += powerProduct;
     }
 
-    // Had to convert to string manually as to_string method is not working.
-    string sumString = "";
-    int tempSum = sum;
-    while (tempSum > 0) {
-        sumString = char(tempSum % 10 + '0') + sumString;
-        tempSum /= 10;
-    }
-
-    if (sumString == num) {
+    if (to_string((long)sum) == num) {
         cout << num << " is an Armstrong number." << endl;
     }
     else {
