@@ -1,29 +1,35 @@
 #include <iostream>
-#include <cmath>
+#include <string>
 
 using namespace std;
 
 int main() {
-    cout << "Tooba Farooq SE-009" << endl;
-    int number = 153, originalNumber = number, remainder, result = 0, n = 0;
+    string num = "153";
+    int powerProduct;
+    int sum=0;
 
-    for (; originalNumber != 0; originalNumber /= 10) {
-        n++;
+    for (int i = 0; i < num.size(); i++) {
+        powerProduct = (int)num[i] - 48;
+        for (int j = 1; j <= num.size() - 1; j++) {
+            powerProduct *= (int)num[i] - 48;
+        }
+        sum += powerProduct;
     }
 
-    originalNumber = number;
-
-    while (originalNumber != 0) {
-        remainder = originalNumber % 10;
-        result += pow(remainder, n);
-        originalNumber /= 10;
+    // Had to convert to string manually as to_string method is not working.
+    string sumString = "";
+    int tempSum = sum;
+    while (tempSum > 0) {
+        sumString = char(tempSum % 10 + '0') + sumString;
+        tempSum /= 10;
     }
 
-    if (result == number) {
-        cout << number << " is an Armstrong number." << endl;
-    } else {
-        cout << number << " is not an Armstrong number." << endl;
+    if (sumString == num) {
+        cout << num << " is an Armstrong number." << endl;
     }
-
+    else {
+        cout << num << " is not an Armstrong number." << endl;
+    }
+    
     return 0;
 }
